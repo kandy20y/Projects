@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Enrollment Form</title>
+    <script src="studentenrolment.js"></script>
+    <link rel="stylesheet" href="studentenrolment.css">
+    <link rel="shortcut icon" type="icon" href="https://www.prosperousns.ie/uploads/2/5/0/4/25048510/enrollment-forms_orig.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+     <!-- Defining the head of the Web Page -->
+    <div class="jumbotron text-center"  id="head">
+        <h1 id="heading">Student Enrollment Form</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div id="formdiv" class="col-sm-4">
+                <!-- Using form tag  -->
+                <form id="myform" class="form" name="formvalidate">
+                        <!-- Taking the input for the Name -->
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-4 ">
+                                Name
+                            </label>
+                            <input type="text" class="form-control col-sm-8 name-field" id="name" name="namevalue" placeholder="Enter your Name">
+                            <span class="message"></span>
+                        </div>
+
+                        <!-- Taking the input for the Email -->
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-4">
+                                Email
+                            </label>
+                            <input type="email" class="form-control col-sm-8 email-field" id="email" name="emailvalue" placeholder="Enter your Email id" >
+                            <span class="message " style="font-size:small"></span>
+                        </div>
+
+                        <!-- Taking the input for the Website -->
+                        <div class="form-group row">
+                            <label for="website" class="col-sm-4">
+                                Website
+                            </label>
+                            <input type="url" class="form-control col-sm-8" id="website" name="websitevalue" placeholder="www.example.com" >
+                            <span class="message"></span>
+                        </div>
+
+                        <!-- Taking the input for the Image Link -->
+                        <div class="form-group row">
+                            <label for="image" class="col-sm-4">
+                                Image Link
+                            </label>
+                            <input type="url" class="form-control col-sm-8" id="image" name="imgvalue" placeholder="Enter URL of Image">
+                            <span class="message"></span>
+                        </div>
+
+                        <!-- Taking the input for the Gender -->
+                        <div class="form-group row">
+                            <label for="gender" class="col-sm-4">
+                                Gender
+                            </label>
+                            <!-- Using Radio buttons to take the input -->
+                            <div id="gender">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genderselect" id="Male" checked >
+                                    <label class="form-check-label" for="Male"> Male </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="genderselect" id="Female" >
+                                    <label class="form-check-label" for="Female"> Female</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Choice given to input Skills -->
+                        <div id="checkdiv" class="form-group row">
+                            <label for="Skills" class="col-sm-3">
+                                Skills
+                            </label>
+                            <!-- Applying checkbox for input of choices -->
+                            <label class="checkbox-inline col-sm-3" for="java">
+                                <input checked type="checkbox"  name="skillvalue" id="java" value="Java"> Java
+                            </label>
+                            <label class="checkbox-inline col-sm-3" for="html">
+                                <input type="checkbox" name="skillvalue" id="html" value="HTML"> HTML
+                            </label>
+                            <label class="checkbox-inline col-sm-3" for="css">
+                                <input type="checkbox" name="skillvalue" id="css" value="CSS"> CSS
+                            </label>
+                        </div>
+
+                        <!-- Adding enroll button for form submission and clear button for clearing the input of the form -->
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <button type="button" id="updateButton" onclick="validate()" class="btn btn-primary">
+                                    Enroll Student
+                                </button>
+                            </div>
+                            <div class="offset-1 col-xs-4">
+                                <button type="reset" id="clearButton" class="btn btn-danger">
+                                    Clear
+                                </button>
+                            </div>
+                        </div>
+
+
+                </form>
+            </div>
+            <!-- 
+                Adding line for Dividing the Page
+             -->
+            <div class="col-sm-4 d-none d-sm-block">
+                <p id="vline"></p>
+            </div>
+            
+            <!-- The Display Side of the Data Entered in the form of the Table -->
+            <div id="enrollclass" class="col-sm-4">
+                <h2 id="display">Enrolled Students</h2>
+                <table id="product" class="table table-bordered table-condensed table-stripped" title="Enrolled Students">
+                    <thead id="output">
+                        <tr>
+                            <!-- Two column one for data display and other for the image -->
+                            <th id ="description">Description</th>
+                            <th id ="img">Image</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <!-- Assigning the Footer -->
+    <footer>
+        Copyright 2023-2024 by Fresher Training
+    </footer>
+</body>
+</html>

@@ -1,0 +1,134 @@
+#vline {
+    border-left: 3px solid #00CCAA;
+    height: 400px;
+    position:absolute;
+    left: 50%;
+    text-align: right;
+}
+/* Applying color to the Header */
+#head {
+    background-color: #00CCAA;
+    padding: 5px;
+    color: white;
+}
+#heading {
+    font-size:35px;
+}
+Footer {
+    background-color: #00CCAA;
+    padding: 5px;
+    color: white;
+    text-align: center;
+    margin-top: 45px;
+}
+#product {
+    border-width: 2px;
+    border-color: yellowgreen;
+    padding:0px
+}
+#display {
+    margin-bottom: 20px;
+    text-align:center;
+    font-size:30px;
+}
+#output
+{
+    background-color:yellowgreen;
+    color:white;
+}
+#img {
+    width: 140px;
+}
+
+.message {
+    display: inline-block;
+}
+
+#new {
+    border-color:yellowgreen;
+}
+#Male {
+    accent-color: rgba(11, 31, 209, 0.952);
+}
+#Female {
+    accent-color: rgba(11, 31, 209, 0.952);
+}
+
+#myform{
+    margin-top: 40px;
+    margin-left: 22px;
+}
+
+#enrollclass{
+    margin-top: 45px;
+}
+
+/* Adding animation to the table */
+
+.animated {
+    -webkit-animation: FadeInLeft 5s;
+    -moz-animation: FadeInLeft 5s;
+    -o-animation:  FadeInLeft 5s;
+    animation: FadeInLeft 5s;
+}
+@-webkit-keyframes fadeInLeft{
+    0%{
+        opacity: 0;
+        -webkit-transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+
+}
+@-moz-keyframes fadeInLeft{
+    0%{
+        opacity: 0;
+        -mox-transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        -moz-transform: translateX(0);
+    }
+
+}
+
+@-o-keyframes fadeInLeft{
+    0%{
+        opacity: 0;
+        -o-transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        -o-transform: translateX(0);
+    }
+
+}
+@keyframes fadeInLeft {
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    -moz-animation-name: fadeInLeft;
+    -o-animation-name: fadeInLeft;
+}
+
+tr:nth-child(even) {
+    background-color: lightgoldenrodyellow;
+    padding: 0 0 0 0;
+    font-size: 13px
+}
+tr:nth-child(odd) {
+    padding: 0 0 0 0;
+    font-size:13px;
+}
